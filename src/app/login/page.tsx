@@ -20,7 +20,6 @@ const response = await axios.post("/api/users/login", user);
 console.log("Login success", response.data);
 toast.success("Login successfully");
 router.push("/profile");
-
 }catch(error:any){
 console.log("Login failed", error.message);
 toast.error(error.message);
@@ -62,7 +61,8 @@ toast.error(error.message);
             <button onClick={onLogin}>Login </button>
             <br />
             <br />
-            <Link href="/signup"> visit signup page</Link>
+            <Link href="/signup">visit signup page</Link>
         </div>
     );
 }
+

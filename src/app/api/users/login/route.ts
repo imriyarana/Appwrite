@@ -8,7 +8,7 @@ connect()
 
 export async function POST( request : NextRequest) {
 try{
-const reqBody= await request.json()
+const reqBody = await request.json()
 const {email,password} = reqBody;
 console.log(reqBody);
 
@@ -40,6 +40,7 @@ const response = NextResponse.json({
 response.cookies.set("token", token,{
     httpOnly:true,
 })
+return response;
 }catch(error: any){
  return NextResponse.json({error: error.message},
     {status:500});
